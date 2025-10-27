@@ -155,6 +155,36 @@ terraform show
 terraform state list
 ```
 
+## Team Collaboration with HCP Terraform
+
+For team environments and production deployments, consider using [HCP Terraform](https://cloud.hashicorp.com/products/terraform) (formerly Terraform Cloud) for:
+
+- **Remote State Management**: Secure, centralized state storage
+- **Team Collaboration**: Multiple developers working on the same infrastructure
+- **Policy as Code**: Automated policy enforcement with Sentinel
+- **Cost Estimation**: Track infrastructure costs before deployment
+- **Run Management**: Automated plan and apply workflows
+
+### Getting Started with HCP Terraform
+
+Follow the [HCP Terraform tutorial](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/aws-hcp-terraform) to:
+
+1. **Create a workspace** in HCP Terraform
+2. **Configure remote backend** for state management
+3. **Set up team access** and permissions
+4. **Enable policy enforcement** for compliance
+5. **Configure automated runs** for CI/CD integration
+
+### Migrating to HCP Terraform
+
+To migrate this local configuration to HCP Terraform:
+
+1. Create a new workspace in HCP Terraform
+2. Update `terraform.tf` to include remote backend configuration
+3. Push your code to a version control system (Git)
+4. Connect the workspace to your repository
+5. Configure variables and policies in the HCP Terraform UI
+
 ## Next Steps
 
 This tutorial covers basic Terraform concepts. To continue learning:
@@ -162,7 +192,7 @@ This tutorial covers basic Terraform concepts. To continue learning:
 1. Uncomment the EC2 instance in `main.tf` to create a complete infrastructure
 2. Explore [Terraform AWS modules](https://registry.terraform.io/namespaces/terraform-aws-modules)
 3. Learn about [Terraform state management](https://developer.hashicorp.com/terraform/language/state)
-4. Practice with [Terraform Cloud](https://cloud.hashicorp.com/products/terraform) for team collaboration
+4. Practice with [HCP Terraform](https://cloud.hashicorp.com/products/terraform) for team collaboration
 
 ## Resources
 
