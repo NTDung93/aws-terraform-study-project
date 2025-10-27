@@ -1,4 +1,13 @@
 terraform {
+  cloud {
+    organization = "hashicorp-study"
+
+    workspaces {
+      project = "Learn Terraform"
+      name = "learn-terraform-aws-get-started"
+    }
+  }
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
