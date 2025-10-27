@@ -13,17 +13,17 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"] # Canonical
 }
 
-# resource "aws_instance" "app_server" {
-#   ami           = data.aws_ami.ubuntu.id
-#   instance_type = var.instance_type
+resource "aws_instance" "app_server" {
+  ami           = data.aws_ami.ubuntu.id
+  instance_type = var.instance_type
 
-#   vpc_security_group_ids = [module.vpc.default_security_group_id]
-#   subnet_id              = module.vpc.private_subnets[0]
+  vpc_security_group_ids = [module.vpc.default_security_group_id]
+  subnet_id              = module.vpc.private_subnets[0]
 
-#   tags = {
-#     Name = var.instance_name
-#   }
-# }
+  tags = {
+    Name = var.instance_name
+  }
+}
 
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
